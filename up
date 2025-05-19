@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo "파일명:$1"
+
+if [ -z "$1" ]; then
+   git add .
+   git commit -m "업로드: 전체 폴더"
+else
+   git add "$1"
+   git commit -m "업로드: $1"
+fi
+
+git push origin main
